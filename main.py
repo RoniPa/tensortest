@@ -1,3 +1,4 @@
+import tensorflow as tf
 from tensortest import *
 
 def import_data():
