@@ -12,5 +12,5 @@ if __name__ == "__main__":
 
     mnist = import_data()
     conv_net.train(mnist)
-
+    conv_net.save('vars/model.ckpt')
   

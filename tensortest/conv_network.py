@@ -87,6 +87,16 @@ class ConvNetwork(object):
 
       end = time.time()
       print('training finished, elapsed time %.2f seconds' % (end-start))
+
+    def save(self, path):
+      saver = tf.train.Saver()
+      save_path = saver.save(self.sess, path)
+      print('model saved in file: %s' % save_path)
+
+    def restore(self, path):
+      saver = tf.train.Saver()
+      saver.restore(self.sess, path)
+      print('model restored from path %s' % path)
     
 def weight_variable(shape):
   initial = tf.truncated_normal(shape, stddev=0.1)
